@@ -1,0 +1,50 @@
+RewriteEngine On
+
+################################
+# 0) Force HTTPS (live server)
+################################
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://parisfasttransfer.com/$1 [R=301,L]
+
+################################
+# 0.5) Special-case: /index, /index.html, /index.php -> redirect to root
+#      Avoids duplicate homepage URL (root vs /index)
+################################
+RewriteCond %{THE_REQUEST} \s/+index(\.html|\.php)?[\s?] [NC]
+RewriteRule ^ /? [R=301,L]
+
+################################
+# 1) If URL is typed/linked WITH .html or .php, 301 redirect to the
+#    clean (extension-less) URL. e.g. /about.html -> /about
+################################
+RewriteCond %{THE_REQUEST} \s/+(.*)\.(?:html|php)[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+################################
+# 2) Internally serve the matching .html file for a clean URL
+#    (browser URL stays clean, e.g. /about serves about.html)
+################################
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
+
+################################
+# 3) Internally serve the matching .php file for a clean URL
+################################
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.+?)/?$ $1.php [L]
+
+ErrorDocument 404 /404.html
+
+# HSTS - force HTTPS
+<IfModule mod_headers.c>
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+</IfModule>
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php82” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php82 .php .php8 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

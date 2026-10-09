@@ -1,0 +1,19 @@
+# robots.txt for http://localhost:8000/
+
+User-agent: *
+Allow: /
+
+# Block these unnecessary files/folders (optional but SEO clean)
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /admin/
+Disallow: /includes/
+Disallow: /scripts/
+Disallow: /old/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: http://localhost:8000/sitemap.xml
+
+# Crawling delay (optional)
+Crawl-delay: 5
