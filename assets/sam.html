@@ -1,0 +1,294 @@
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .two-col-section {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            padding: 40px 10%;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Desktop Ratio: Image 1/3 — Content 2/3 */
+        .left {
+            flex: 1;
+            opacity: 0;
+            animation: slideInLeft 0.8s ease-out forwards;
+        }
+
+        .right {
+            flex: 2;
+            opacity: 0;
+            animation: slideInRight 0.8s ease-out forwards;
+            animation-delay: 0.2s;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .two-col-section .left img {
+            width: 100%;
+            border-radius: 12px;
+            object-fit: cover;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .two-col-section .left img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .two-col-section .right h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: #333;
+            font-weight: 700;
+        }
+
+        .two-col-section .right p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .two-col-section .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .two-col-section .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .two-col-section .btn:active {
+            transform: translateY(0);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .two-col-section {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 5%;
+            }
+
+            .left, .right {
+                flex: unset;
+                width: 100%;
+            }
+
+            .left {
+                animation: slideInUp 0.8s ease-out forwards;
+                order: 1;
+            }
+
+            .right {
+                animation: slideInUp 0.8s ease-out forwards;
+                animation-delay: 0.2s;
+                order: 2;
+            }
+
+            @keyframes slideInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(50px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .two-col-section .left img:hover {
+                transform: scale(1.02);
+            }
+
+            .two-col-section .right h2 {
+                font-size: 26px;
+                margin-top: 20px;
+            }
+
+            .two-col-section .right p {
+                font-size: 16px;
+            }
+
+            .two-col-section {
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .two-col-section {
+                padding: 20px 4%;
+            }
+
+            .two-col-section .right h2 {
+                font-size: 22px;
+            }
+
+            .two-col-section .right p {
+                font-size: 15px;
+            }
+
+            .two-col-section .btn {
+                padding: 10px 24px;
+                font-size: 14px;
+            }
+        }
+    </style>
+
+    <section class="two-col-section">
+        <div class="left">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=600&fit=crop" alt="Feature Image">
+        </div>
+        <div class="right">
+            <h2>Responsive Design</h2>
+            <p>Create stunning layouts that look perfect on every device. Our responsive design system adapts seamlessly from mobile phones to desktop screens.</p>
+            <p>With smooth animations and modern styling, your content will engage users and provide an excellent user experience across all platforms.</p>
+            <button class="btn">Learn More</button>
+        </div>
+    </section>
+
+
+
+    <!-- Google Translate (Hidden) -->
+<div id="google_translate_element" style="display:none;"></div>
+
+<!-- 🌍 FLAG SWITCHER -->
+<div class="premium-lang-box">
+    <img src="https://flagcdn.com/48x36/gb.png" id="flag-en" class="flag-btn" onclick="translateLanguage('en')">
+    <img src="https://flagcdn.com/48x36/fr.png" id="flag-fr" class="flag-btn" onclick="translateLanguage('fr')">
+    <img src="https://flagcdn.com/48x36/it.png" id="flag-it" class="flag-btn" onclick="translateLanguage('it')">
+    <img src="https://flagcdn.com/48x36/es.png" id="flag-es" class="flag-btn" onclick="translateLanguage('es')">
+    
+</div>
+
+<style>
+/* 🌍 FLAG BUTTONS */
+.premium-lang-box {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    
+}
+
+.flag-btn {
+    width: 32px;
+    height: 22px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    border: 2px solid transparent;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    
+}
+
+.flag-btn:hover {
+    transform: translateY(-3px);
+}
+
+.flag-active {
+    border-color: #007bff;
+    transform: translateY(-3px);
+    box-shadow: 0 0 10px rgba(0,123,255,0.7);
+}
+
+/* 🔥 HIDE GOOGLE TRANSLATE POPUP */
+.goog-te-spinner-pos,
+.goog-te-balloon-frame,
+.goog-tooltip,
+.goog-tooltip:hover,
+.goog-text-highlight,
+.goog-te-menu-frame,
+.goog-te-banner-frame,
+.skiptranslate iframe {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    height: 0 !important;
+}
+
+body { top: 0px !important; }
+.goog-text-highlight { background: none !important; }
+</style>
+
+<script>
+/* INIT Google Translate */
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,fr,it,es'
+    }, 'google_translate_element');
+}
+
+/* FLAG CLICK → CHANGE LANGUAGE */
+function translateLanguage(lang) {
+    let combo = document.querySelector(".goog-te-combo");
+    if (combo) {
+        combo.value = lang;
+        combo.dispatchEvent(new Event("change"));
+    }
+
+    // Active flag UI
+    document.querySelectorAll(".flag-btn").forEach(f => f.classList.remove("flag-active"));
+    document.getElementById("flag-" + lang).classList.add("flag-active");
+}
+
+/* FORCE REMOVE POPUP */
+setInterval(() => {
+    document.querySelectorAll(".goog-te-banner-frame, .goog-te-balloon-frame, .goog-tooltip")
+        .forEach(el => el.remove());
+
+    document.body.style.top = "0px";
+}, 100);
+</script>
+
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+

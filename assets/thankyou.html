@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thank you for your booking request with Paris Fast Transfer. Our team will confirm your private airport transfer shortly.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="http://localhost:8000/thankyou">
+
+    <!-- title -->
+   <title>Thank You for Your Booking | Paris Fast Transfer</title>
+
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/img/logo/New_Project__2_-removebg-preview.png" >
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/all-fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="assets/css/jquery.timepicker.min.css">
+    <link rel="stylesheet" href="assets/css/nice-select.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+     <style>
+         /* Keep navbar visible on scroll (local to this page) */
+         .header{ position: fixed; left:0; right:0; top:0; z-index: 1050; background:#ffffff; }
+         .main-navigation{ background:#ffffff; box-shadow: 0 4px 16px rgba(0,0,0,.06); }
+         /* Prevent content from hiding under fixed header */
+         .main{ padding-top: 100px; }
+        body { margin:0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif; background:#f7f9fc; color:#0b2542; }
+        .wrap { max-width: 980px; margin: 40px auto; padding: 0 16px; }
+        .card { background:#fff; border-radius:16px; box-shadow: 0 10px 30px rgba(0,0,0,.06); overflow:hidden; }
+        .hero { background: linear-gradient(135deg,#ffdf5b,#ffc107); padding: 36px 28px; text-align:center; color:#0b2542; }
+        .hero h1 { margin:0 0 6px; font-size:34px; }
+        .hero p { margin:0; opacity:.85; }
+        .content { padding: 24px 28px 10px; }
+        .grid { display:grid; grid-template-columns: repeat(2,1fr); gap:16px; }
+        .item { background:#f4f7fb; border:1px solid #e6edf5; border-radius:12px; padding:14px 16px; }
+        .item h4 { margin:0 0 6px; font-size:14px; text-transform:uppercase; letter-spacing:.02em; opacity:.7; }
+        .item div { font-size:16px; }
+        .footer { padding: 18px 28px 26px; display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
+        .btn { background:#ffc107; color:#fff; border:none; border-radius:28px; padding:12px 18px; cursor:pointer; font-weight:600; }
+        .muted { color:#64748b; font-size:14px; }
+        @media (max-width: 720px){ .grid{ grid-template-columns: 1fr; } }
+    </style>
+    <script>
+        (function(){
+            function get(name){ return new URLSearchParams(window.location.search).get(name) || ''; }
+            function set(id, val){ var el=document.getElementById(id); if (el) el.textContent = val || '-'; }
+            window.addEventListener('DOMContentLoaded', function(){
+               
+                
+
+                set('v-name', get('name'));
+                set('v-phone', get('phone'));
+                set('v-email', get('email'));
+                set('v-pickup', get('pickup'));
+                set('v-dropoff', get('dropoff'));
+                set('v-passengers', get('passengers'));
+                set('v-cabtype', get('cabtype'));
+                set('v-date', get('date'));
+                set('v-time', get('time'));
+                set('v-pickuptype', get('pickuptype'));
+                set('v-message', get('message'));
+                set('v-pickupaddr', get('pickupaddr'));
+                set('v-dropoffaddr', get('dropoffaddr'));
+                set('v-return-pickup-address', get('return_pickupaddr'));
+                set('v-return-dropoff', get('return_dropoff'));
+                set('v-return-date', get('return_date'));
+                set('v-return-time', get('return_time'));
+                set('v-babyseats', get('babyseats'));
+                set('v-flight', get('flight'));
+                set('v-price', get('price'));
+
+                // Hide return fields if pickup type is "One way"
+                var pickupType = get('pickuptype').trim();
+                if (pickupType && pickupType.toLowerCase() === 'one way') {
+                    var returnFields = document.querySelectorAll('.return-field');
+                    returnFields.forEach(function(field) {
+                        field.style.display = 'none';
+                    });
+                }
+            });
+        })();
+
+        // PDF Download Function
+        function downloadPDF() {
+            // Get booking details from the page
+            var name = document.getElementById('v-name').textContent || 'N/A';
+            var phone = document.getElementById('v-phone').textContent || 'N/A';
+            var email = document.getElementById('v-email').textContent || 'N/A';
+            var pickupaddr = document.getElementById('v-pickupaddr').textContent || 'N/A';
+            var dropoffaddr = document.getElementById('v-dropoffaddr').textContent || 'N/A';
+            var date = document.getElementById('v-date').textContent || 'N/A';
+            var time = document.getElementById('v-time').textContent || 'N/A';
+            var pickuptype = document.getElementById('v-pickuptype').textContent || 'N/A';
+            var price = document.getElementById('v-price').textContent || 'N/A';
+            var passengers = document.getElementById('v-passengers').textContent || 'N/A';
+            
+            // Create PDF content using html2pdf library
+            const element = document.querySelector('.card');
+            const opt = {
+                margin: 10,
+                filename: 'Paris_Fast_Transfer_Booking_' + new Date().getTime() + '.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
+            };
+            
+            // Load html2pdf library dynamically
+            var script = document.createElement('script');
+            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js';
+            script.onload = function() {
+                html2pdf().set(opt).from(element).save();
+            };
+            document.head.appendChild(script);
+        }
+    </script>
+    </script>
+
+</head>
+
+<body>
+
+    <!-- preloader -->
+    <div class="preloader">
+        <div class="loader-ripple">
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- preloader end -->
+
+
+    <!-- header area -->
+   <header class="header">
+        <!-- top header -->
+        <!-- ========== Top Bar Start ========== -->
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-wrapper">
+                    <!-- Left Side (Contact Info) -->
+                    <div class="header-top-left">
+                        <div class="header-top-contact">
+                            <ul>
+                                <li><a href="mailto:info@example.com"><i class="far fa-envelopes"></i>
+                                        Parisfasttransfer@gmail.com</a></li>
+                                <li><a href="tel:+21236547898"><i class="far fa-phone-volume"></i> +33 752 24 44 44</a>
+                                </li>
+                                <li><a href="#"><i class="far fa-alarm-clock"></i> Sun - Fri (08AM - 10PM)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Right Side (Language Switcher + Social) -->
+          <div class="header-top-right">
+
+            <!-- Language Switcher -->
+            <div id="google_translate_element"></div>
+
+            <script type="text/javascript">
+              function googleTranslateElementInit() {
+                new google.translate.TranslateElement({
+                  pageLanguage: 'en', // Unga website-oda original language-a inga podunga
+                  includedLanguages: 'en,es,fr,it,', // EN, ES, FR, IT (Sinhala vaaraathu)
+                  layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                }, 'google_translate_element');
+              }
+            </script>
+
+            <script type="text/javascript"
+              src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit&hl=en"></script>
+
+
+
+
+                        <!-- Social Links -->
+                        <div class="header-top-social">
+                            <span>Follow Us: </span>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ========== Top Bar End ========== -->
+
+        <div class="main-navigation">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container position-relative">
+                    <a class="navbar-brand" href="/">
+                        <img src="assets/img/logo/logo-light.png" alt="Parisfasttransfer">
+                    </a>
+                    <div class="mobile-menu-right">
+                        <!-- <div class="search-btn">
+                            <button type="button" class="nav-right-link"><i class="far fa-search"></i></button>
+                        </div> -->
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#main_nav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-mobile-icon"><i class="far fa-bars"></i></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="main_nav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link " href="/">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about.html">About Us</a>
+                            </li>
+                            <li class="nav-item">
+    <a class="nav-link" href="service.html">Our Services</a>
+</li>
+
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="taxi-rate.html">Our Rates</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="partner.html">Partner </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="blog.html">Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact.html">Contact Us</a>
+                            </li>
+                        </ul>
+
+                        <!-- Keep only Book A Taxi button -->
+                        <div class="nav-right">
+                            <div class="nav-right-btn mt-2">
+                                <a href="contact.html" class="theme-btn"><span class="fas fa-taxi"></span>Contact Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- search area -->
+                    <div class="search-area">
+                        <form action="#">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Type Keyword...">
+                                <button type="submit" class="search-icon-btn"><i class="far fa-search"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- search area end -->
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- header area end -->
+
+
+    <!-- sidebar-popup -->
+    <!-- <div class="sidebar-popup">
+        <div class="sidebar-wrapper">
+            <div class="sidebar-content">
+                <button type="button" class="close-sidebar-popup"><i class="far fa-xmark"></i></button>
+                <div class="sidebar-logo">
+                    <img src="assets/img/logo/logo.png" alt="">
+                </div>
+                <div class="sidebar-about">
+                    <h4>About Us</h4>
+                    <p>There are many variations of passages available sure there majority have suffered alteration in
+                        some form by injected humour or randomised words which don't look even slightly believable.</p>
+                </div>
+                <div class="sidebar-contact">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li>
+                            <h6>Email</h6>
+                            <a href="mailto:info@example.com"><i class="far fa-envelope"></i>info@example.com</a>
+                        </li>
+                        <li>
+                            <h6>Phone</h6>
+                            <a href="tel:+21236547898"><i class="far fa-phone"></i>+2 123 654 7898</a>
+                        </li>
+                        <li>
+                            <h6>Address</h6>
+                            <a href="#"><i class="far fa-location-dot"></i>25/B Milford Road, New York</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sidebar-social">
+                    <h4>Follow Us</h4>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- sidebar-popup end -->
+
+
+    <main class="main">
+
+        <!-- hero slider -->
+        <!-- <div class="hero-section">
+            <div class="hero-slider owl-carousel owl-theme">
+                <div class="hero-single" style="background: url(assets/img/slider/slider-1.jpg)">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-md-12 col-lg-9 mx-auto">
+                                <div class="hero-content text-center">
+                                    <h6 class="hero-sub-title" data-animation="fadeInUp" data-delay=".25s">Welcome To
+                                        Taxica!</h6>
+                                    <h1 class="hero-title" data-animation="fadeInRight" data-delay=".50s">
+                                        Book <span>Taxi</span> For Your Ride
+                                    </h1>
+                                    <p data-animation="fadeInLeft" data-delay=".75s">
+                                        There are many variations of passages available the majority have suffered
+                                        alteration in some form generators on the Internet tend to repeat predefined
+                                        chunks injected humour randomised words look even slightly believable.
+                                    </p>
+                                    <div class="hero-btn justify-content-center" data-animation="fadeInUp"
+                                        data-delay="1s">
+                                        <a href="#" class="theme-btn">About More<i class="fas fa-arrow-right"></i></a>
+                                        <a href="#" class="theme-btn theme-btn2">Learn More<i
+                                                class="fas fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-single" style="background: url(assets/img/slider/slider-2.jpg)">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-md-12 col-lg-9 mx-auto">
+                                <div class="hero-content text-center">
+                                    <h6 class="hero-sub-title" data-animation="fadeInUp" data-delay=".25s">Welcome To
+                                        Taxica!</h6>
+                                    <h1 class="hero-title" data-animation="fadeInRight" data-delay=".50s">
+                                        Book <span>Taxi</span> For Your Ride
+                                    </h1>
+                                    <p data-animation="fadeInLeft" data-delay=".75s">
+                                        There are many variations of passages available the majority have suffered
+                                        alteration in some form generators on the Internet tend to repeat predefined
+                                        chunks injected humour randomised words look even slightly believable.
+                                    </p>
+                                    <div class="hero-btn justify-content-center" data-animation="fadeInUp"
+                                        data-delay="1s">
+                                        <a href="#" class="theme-btn">About More<i class="fas fa-arrow-right"></i></a>
+                                        <a href="#" class="theme-btn theme-btn2">Learn More<i
+                                                class="fas fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-single" style="background: url(assets/img/slider/slider-3.jpg)">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-md-12 col-lg-9 mx-auto">
+                                <div class="hero-content text-center">
+                                    <h6 class="hero-sub-title" data-animation="fadeInUp" data-delay=".25s">Welcome To
+                                        Taxica!</h6>
+                                    <h1 class="hero-title" data-animation="fadeInRight" data-delay=".50s">
+                                        Book <span>Taxi</span> For Your Ride
+                                    </h1>
+                                    <p data-animation="fadeInLeft" data-delay=".75s">
+                                        There are many variations of passages available the majority have suffered
+                                        alteration in some form generators on the Internet tend to repeat predefined
+                                        chunks injected humour randomised words look even slightly believable.
+                                    </p>
+                                    <div class="hero-btn justify-content-center" data-animation="fadeInUp"
+                                        data-delay="1s">
+                                        <a href="#" class="theme-btn">About More<i class="fas fa-arrow-right"></i></a>
+                                        <a href="#" class="theme-btn theme-btn2">Learn More<i
+                                                class="fas fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- hero slider end -->
+
+
+      <br>
+
+       <!--booking details start-->
+    <div class="wrap">
+        <div class="card">
+            <div class="hero">
+                <h1><i class="fas fa-check-circle"></i> Thank You!</h1>
+                <p>Your booking request has been received. We will contact you shortly.</p>
+            </div>
+            <div class="content">
+                <div class="grid">
+                    
+                    <div class="item"><h4>Name</h4><div id="v-name">-</div></div>
+                    <div class="item"><h4>Phone</h4><div id="v-phone">-</div></div>
+                    <div class="item"><h4>Email</h4><div id="v-email">-</div></div>
+                    
+                    <div class="item"><h4>Pickup</h4><div id="v-pickup">-</div></div>
+                    <div class="item"><h4>Drop Off</h4><div id="v-dropoff">-</div></div>
+                    <div class="item"><h4>Pickup Address</h4><div id="v-pickupaddr">-</div></div>
+                    <div class="item"><h4>Dropoff Address</h4><div id="v-dropoffaddr">-</div></div>
+                    <div class="item"><h4>Date</h4><div id="v-date">-</div></div>
+                    <div class="item"><h4>Time</h4><div id="v-time">-</div></div>
+                    
+                    <div class="item return-field" id="return-item-1"><h4>Return Pickup Address</h4><div id="v-return-pickup-address">-</div></div>
+                    <div class="item return-field" id="return-item-2"><h4>Return Dropoff Address</h4><div id="v-return-dropoff">-</div></div>
+                    <div class="item return-field" id="return-item-3"><h4>Return Date</h4><div id="v-return-date">-</div></div>
+                    <div class="item return-field" id="return-item-4"><h4>Return Time</h4><div id="v-return-time">-</div></div>
+                    <!-- <div class="item"><h4>Cab Type</h4><div id="v-cabtype">-</div></div> -->
+                     
+                    <div class="item"><h4>Pickup Type</h4><div id="v-pickuptype">-</div></div>
+                    <div class="item"><h4>Price</h4><div id="v-price">-</div></div>
+                    <div class="item"><h4>Baby Seats</h4><div id="v-babyseats">-</div></div>
+                    <div class="item"><h4>Flight/ Train Number</h4><div id="v-flight">-</div></div>
+                    <div class="item"><h4>Passengers</h4><div id="v-passengers">-</div></div>
+                    <div class="item" style="grid-column:1/-1"><h4>Message</h4><div id="v-message">-</div></div>
+                </div>
+            </div>
+            <div class="footer">
+                <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                    <a href="/" class="btn"><i class="fas fa-home"></i>&nbsp; Back To Home</a>
+                    <button onclick="downloadPDF()" class="btn" style="display: none; background: #FF6B35; border: none; cursor: pointer; align-items: center; gap: 8px;">
+                        <i class="fas fa-download"></i>&nbsp; Download PDF
+                    </button>
+                </div>
+                <span class="muted">A confirmation will be sent to your email/phone soon.</span>
+            </div>
+        </div>
+    </div>
+    <!--booking details end-->
+
+
+        
+
+       
+
+
+      
+
+
+       
+
+
+       
+
+       
+
+    
+
+     
+
+
+
+
+    </main>
+
+
+
+    <!-- footer area -->
+   <footer class="footer-area">
+    <!-- WhatsApp Button -->
+  <div id="whatsapp-button" class="whatsapp-button">
+    <a href="https://wa.me/+33 752 24 44 44" target="_blank" rel="noopener noreferrer">
+      <img src="assets/img/slider/R.png" alt="WhatsApp Icon">
+    </a>
+  </div>
+        <div class="footer-widget">
+            <div class="container">
+                <div class="row footer-widget-wrapper pt-120 pb-70">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="footer-widget-box about-us">
+                            <a href="#" class="footer-logo">
+                                <img src="assets/img/taxi/New Project.png" alt="Parisfasttransfer" >
+                            </a>
+                            <p class="mb-3">
+    Travelling from Charles de Gaulle Airport or other Paris airports to Disneyland or around Paris has never been easier. 
+    Paris Fast Transfer provides safe, reliable, and comfortable transfers with professional drivers to make your journey smooth and stress-free.
+</p>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-2">
+                        <div class="footer-widget-box list">
+                            <h4 class="footer-widget-title">Quick Links</h4>
+                            <ul class="footer-list">
+    <li><a href="/"><i class="fas fa-caret-right"></i> Home</a></li>
+    <!-- <li><a href="#"><i class="fas fa-caret-right"></i> PARIS - AIRPORTS - DISNEYLAND</a></li>
+    <li><a href="#"><i class="fas fa-caret-right"></i> SIGHTSEEING PARIS</a></li> -->
+    <li><a href="about.html"><i class="fas fa-caret-right"></i> About Us</a></li>
+    <li><a href="taxi-rate.html"><i class="fas fa-caret-right"></i> Our Rates</a></li>
+    <li><a href="partner.html"><i class="fas fa-caret-right"></i>Paris Fast Transfer</a></li>
+    <li><a href="contact.html"><i class="fas fa-caret-right"></i> Contact Us</a></li>
+</ul>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="footer-widget-box list">
+                            <h4 class="footer-widget-title">Routes</h4>
+                            <ul class="footer-list">
+    <li><a href=""><i class="fas fa-caret-right"></i> Paris</a></li>
+    <li><a href=""><i class="fas fa-caret-right"></i> Disneyland</a></li>
+    <li><a href=""><i class="fas fa-caret-right"></i> Airport Charles de Gaulle</a></li>
+    <li><a href=""><i class="fas fa-caret-right"></i> Airport Orly</a></li>
+    <li><a href=""><i class="fas fa-caret-right"></i> Airport Beauvais</a></li>
+    <li><a href=""><i class="fas fa-caret-right"></i> Parc Asterix</a></li>
+    <li><a href=""><i class="fas fa-caret-right"></i> Charles de Gaulle</a></li>
+</ul>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="footer-widget-box list">
+    <h4 class="footer-widget-title">Contact Info</h4>
+    <ul class="footer-contact">
+        <li><a href="tel:+33752244444"><i class="far fa-phone"></i>+33 752 24 44 44</a></li>
+        <li><i class="far fa-map-marker-alt"></i>Paris, France</li>
+        <li><a href="mailto:pdairportcab@gmail.com"><i class="far fa-envelope"></i>Parisfasttransfer@gmail.com</a></li>
+    </ul>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 align-self-center">
+                        <p class="copyright-text">
+    &copy; Copyright <span id="date"></span> <a href="#"> Paris Fast Transfer </a> All Rights Reserved.
+</p>
+
+                    </div>
+                    <div class="col-md-6 align-self-center">
+                        <ul class="footer-social">
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer area end -->
+
+
+
+    <!-- scroll-top -->
+    <a href="#" id="scroll-top"><i class="far fa-arrow-up"></i></a>
+    <!-- scroll-top end -->
+
+
+    <!-- js -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/modernizr.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="assets/js/jquery.appear.min.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/counter-up.js"></script>
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="assets/js/jquery.timepicker.min.js"></script>
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

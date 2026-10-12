@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book your private cab in Paris online. Fast airport pickup and comfortable transfer from CDG, Orly, or Beauvais Airport to your hotel — 24/7 service.">
+    <meta name="keywords" content="book online a car in paris, transfer airport to hotel paris, paris airport pickup, private cab in paris">
+    <meta property="og:title" content="Book Online a Car in Paris | Airport to Hotel Transfers">
+    <meta property="og:description" content="Easily book your private cab online in Paris. Enjoy fast airport pickups and smooth transfers from CDG or Orly to your hotel. Available 24/7.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:8000/contact">
+    <link rel="canonical" href="http://localhost:8000/contact">
+    <meta property="og:image" content="http://localhost:8000/assets/img/service/airport.jpg">
+    <!-- title -->
+     <title>Book Online a Car in Paris | Airport to Hotel Transfers</title>
+
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/img/logo/New_Project__2_-removebg-preview.png" >
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/all-fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="assets/css/jquery.timepicker.min.css">
+    <link rel="stylesheet" href="assets/css/nice-select.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+
+</head>
+
+<body>
+
+    <!-- preloader -->
+    <!-- <div class="preloader">
+        <div class="loader-ripple">
+            <div></div>
+            <div></div>
+        </div>
+    </div> -->
+    <!-- preloader end -->
+
+
+    <!-- header area -->
+    <header class="header">
+        <!-- top header -->
+        <!-- ========== Top Bar Start ========== -->
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-wrapper">
+                    <!-- Left Side (Contact Info) -->
+                    <div class="header-top-left">
+                        <div class="header-top-contact">
+                            <ul>
+                                <li><a href="mailto:info@example.com"><i class="far fa-envelopes"></i>
+                                        Parisfasttransfer@gmail.com</a></li>
+                                <li><a href="tel:+21236547898"><i class="far fa-phone-volume"></i> +33 752 24 44 44</a>
+                                </li>
+                                <li><a href="#"><i class="far fa-alarm-clock"></i> Sun - Fri (08AM - 10PM)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+ <!-- Language Switcher -->
+            <div id="google_translate_element" style="display:none;"></div>
+
+<!-- 🌍 FLAG SWITCHER -->
+<div class="premium-lang-box">
+    <img src="https://flagcdn.com/48x36/gb.png" id="flag-en" class="flag-btn" onclick="translateLanguage('en')" alt="flag">
+    <img src="https://flagcdn.com/48x36/fr.png" id="flag-fr" class="flag-btn" onclick="translateLanguage('fr')" alt="flag">
+    <img src="https://flagcdn.com/48x36/it.png" id="flag-it" class="flag-btn" onclick="translateLanguage('it')" alt="flag">
+    <img src="https://flagcdn.com/48x36/es.png" id="flag-es" class="flag-btn" onclick="translateLanguage('es')" alt="flag">
+    
+</div>
+
+<style>
+/* 🌍 FLAG BUTTONS */
+.premium-lang-box {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    
+}
+
+.flag-btn {
+    width: 32px;
+    height: 22px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    border: 2px solid transparent;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    
+}
+
+.flag-btn:hover {
+    transform: translateY(-3px);
+}
+
+.flag-active {
+    border-color: #007bff;
+    transform: translateY(-3px);
+    box-shadow: 0 0 10px rgba(0,123,255,0.7);
+}
+
+/* 🔥 HIDE GOOGLE TRANSLATE POPUP */
+.goog-te-spinner-pos,
+.goog-te-balloon-frame,
+.goog-tooltip,
+.goog-tooltip:hover,
+.goog-text-highlight,
+.goog-te-menu-frame,
+.goog-te-banner-frame,
+.skiptranslate iframe {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    height: 0 !important;
+}
+
+body { top: 0px !important; }
+.goog-text-highlight { background: none !important; }
+</style>
+
+<script>
+/* INIT Google Translate */
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,fr,it,es'
+    }, 'google_translate_element');
+}
+
+/* FLAG CLICK → CHANGE LANGUAGE */
+function translateLanguage(lang) {
+    let combo = document.querySelector(".goog-te-combo");
+    if (combo) {
+        combo.value = lang;
+        combo.dispatchEvent(new Event("change"));
+    }
+
+    // Active flag UI
+    document.querySelectorAll(".flag-btn").forEach(f => f.classList.remove("flag-active"));
+    document.getElementById("flag-" + lang).classList.add("flag-active");
+}
+
+/* FORCE REMOVE POPUP */
+setInterval(() => {
+    document.querySelectorAll(".goog-te-banner-frame, .goog-te-balloon-frame, .goog-tooltip")
+        .forEach(el => el.remove());
+
+    document.body.style.top = "0px";
+}, 100);
+</script>
+
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+
+
+                        <!-- Social Links -->
+                        <div class="header-top-social">
+                            <span>Follow Us: </span>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ========== Top Bar End ========== -->
+
+        <div class="main-navigation">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container position-relative">
+                    <a class="navbar-brand" href="/">
+                        <img src="assets/img/logo/logo-light.png" alt="Parisfasttransfer">
+                    </a>
+                    <div class="mobile-menu-right">
+                        <!-- <div class="search-btn">
+                            <button type="button" class="nav-right-link"><i class="far fa-search"></i></button>
+                        </div> -->
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#main_nav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-mobile-icon"><i class="far fa-bars"></i></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="main_nav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link " href="/">Home</a>
+                            </li>
+                             <li class="nav-item">
+                                <a class="nav-link" href="about.html">About Us</a>
+                            </li>
+                            <li class="nav-item">
+    <a class="nav-link" href="service.html">Our Services</a>
+</li>
+
+                           
+                            <li class="nav-item">
+                                <a class="nav-link" href="taxi-rate.html">Our Rates</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="partner.html">Partner</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="blog.html">Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="contact.html">Contact Us</a>
+                            </li>
+                        </ul>
+
+                        <!-- Keep only Book A Taxi button -->
+                        <div class="nav-right">
+                            <div class="nav-right-btn mt-2">
+                                <a href="contact.html" class="theme-btn"><span class="fas fa-taxi"></span>Contact Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- search area -->
+                    <div class="search-area">
+                        <form action="#">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Type Keyword...">
+                                <button type="submit" class="search-icon-btn"><i class="far fa-search"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- search area end -->
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- header area end -->
+
+
+
+    <!-- sidebar-popup -->
+    <!-- <div class="sidebar-popup">
+        <div class="sidebar-wrapper">
+            <div class="sidebar-content">
+                <button type="button" class="close-sidebar-popup"><i class="far fa-xmark"></i></button>
+                <div class="sidebar-logo">
+                    <img src="assets/img/logo/logo.png" alt="">
+                </div>
+                <div class="sidebar-about">
+                    <h4>About Us</h4>
+                    <p>There are many variations of passages available sure there majority have suffered alteration in
+                        some form by injected humour or randomised words which don't look even slightly believable.</p>
+                </div>
+                <div class="sidebar-contact">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li>
+                            <h6>Email</h6>
+                            <a href="mailto:info@example.com"><i class="far fa-envelope"></i>info@example.com</a>
+                        </li>
+                        <li>
+                            <h6>Phone</h6>
+                            <a href="tel:+21236547898"><i class="far fa-phone"></i>+2 123 654 7898</a>
+                        </li>
+                        <li>
+                            <h6>Address</h6>
+                            <a href="#"><i class="far fa-location-dot"></i>25/B Milford Road, New York</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sidebar-social">
+                    <h4>Follow Us</h4>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- sidebar-popup end -->
+
+
+    <main class="main">
+
+        <!-- breadcrumb -->
+        <div class="site-breadcrumb" style="background: url(assets/img/service/02.png)">
+            <div class="container">
+                <h2 class="breadcrumb-title">Contact Us</h2>
+                <ul class="breadcrumb-menu">
+                    <li><a href="/">Home</a></li>
+                    <li class="active">Contact Us</li>
+                </ul>
+            </div>
+        </div>
+        <!-- breadcrumb end -->
+
+
+
+        <!-- contact area -->
+<div class="contact-area py-120">
+    <div class="container">
+        <div class="contact-content">
+            <div class="row">
+                <!-- Office Address -->
+                <div class="col-md-3">
+                    <div class="contact-info">
+                        <div class="contact-info-icon">
+                            <i class="fal fa-map-location-dot"></i>
+                        </div>
+                        <div class="contact-info-content">
+                            <h5>Office Address</h5>
+                            <p>Paris, France</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phone -->
+                <div class="col-md-3">
+                    <div class="contact-info">
+                        <div class="contact-info-icon">
+                            <i class="fal fa-phone-volume"></i>
+                        </div>
+                        <div class="contact-info-content">
+                            <h5>Call Us</h5>
+                            <p>+33 752 24 44 44</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="col-md-3">
+                    <div class="contact-info">
+                        <div class="contact-info-icon">
+                            <i class="fal fa-envelopes"></i>
+                        </div>
+                        <div class="contact-info-content">
+                            <h5>Email Us</h5>
+                            <p>Parisfasttransfer@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Open Time -->
+                <div class="col-md-3">
+                    <div class="contact-info">
+                        <div class="contact-info-icon">
+                            <i class="fal fa-alarm-clock"></i>
+                        </div>
+                        <div class="contact-info-content">
+                            <h5>Open Time</h5>
+                            <p>Mon - Sun (08:00 - 22:00 )</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Form & Image -->
+        <div class="contact-wrapper py-5">
+    <div class="row align-items-center">
+        <!-- Left Image -->
+        <div class="col-lg-6">
+            <div class="contact-img">
+                <img src="assets/img/contact/01.jpg" alt="PD Airport Cab">
+            </div>
+        </div>
+
+        <!-- Right WhatsApp CTA -->
+        <div class="col-lg-6 text-center">
+            <div class="contact-cta">
+                <h2 style="font-size: 48px; font-weight: bold; margin-bottom: 20px;">WhatsApp Now!</h2>
+                <a href="https://wa.me/33752244444" target="_blank" style="font-size: 36px; color: #25D366; font-weight: bold; text-decoration: none;">
+                    +33 752 24 44 44
+                </a>
+                <p>
+                   Get in touch with Paris Fast Transfer to <strong>book online a car in Paris</strong> easily and quickly. We’re here to assist with <strong>transfer airport to hotel Paris</strong> and provide reliable <strong>Paris airport pickup</strong> for your convenience. Enjoy a smooth and comfortable ride with our <strong>private cab in Paris</strong> available anytime.
+                </p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+<!-- end contact area -->
+
+        <!-- map -->
+        <div class="contact-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d83998.96769528178!2d2.2646335452129187!3d48.85882554203498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1f06e2b70f%3A0x40b82c3688c9460!2sParis%2C%20France!5e0!3m2!1sen!2slk!4v1759576476290!5m2!1sen!2slk"
+                style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+
+    </main>
+
+
+
+    <!-- footer area -->
+ <footer class="footer-area">
+    <!-- WhatsApp Button -->
+  <div id="whatsapp-button" class="whatsapp-button">
+    <a href="https://wa.me/+33 752 24 44 44" target="_blank" rel="noopener noreferrer">
+      <img src="assets/img/slider/R.png" alt="WhatsApp Icon">
+    </a>
+  </div>
+        <div class="footer-widget">
+            <div class="container">
+                <div class="row footer-widget-wrapper pt-120 pb-70">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="footer-widget-box about-us">
+                            <a href="#" class="footer-logo">
+                                <img src="assets/img/taxi/New Project.png" alt="Parisfasttransfer" >
+                            </a>
+                            <p class="mb-3">
+    Travelling from Charles de Gaulle Airport or other Paris airports to Disneyland or around Paris has never been easier. 
+    Paris Fast Transfer provides safe, reliable, and comfortable transfers with professional drivers to make your journey smooth and stress-free.
+</p>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-2">
+                        <div class="footer-widget-box list">
+                            <h4 class="footer-widget-title">Quick Links</h4>
+                            <ul class="footer-list">
+    <li><a href="/"><i class="fas fa-caret-right"></i> Home</a></li>
+    <!-- <li><a href="#"><i class="fas fa-caret-right"></i> PARIS - AIRPORTS - DISNEYLAND</a></li>
+    <li><a href="#"><i class="fas fa-caret-right"></i> SIGHTSEEING PARIS</a></li> -->
+    <li><a href="about.html"><i class="fas fa-caret-right"></i> About Us</a></li>
+    <li><a href="taxi-rate.html"><i class="fas fa-caret-right"></i> Our Rates</a></li>
+    <li><a href="partner.html"><i class="fas fa-caret-right"></i>Paris Fast Transfer</a></li>
+    <li><a href="contact.html"><i class="fas fa-caret-right"></i> Contact Us</a></li>
+</ul>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="footer-widget-box list">
+                            <h4 class="footer-widget-title">Routes</h4>
+                            <ul class="footer-list">
+    <li><a href=""><i class="fas fa-caret-right"></i> Paris</a></li>
+    <li><a href=""><i class="fas fa-caret-right"></i> Disneyland</a></li>
+    <li><a href=""><i class="fas fa-caret-right"></i> Airport Charles de Gaulle</a></li>
+    <li><a href=""><i class="fas fa-caret-right"></i> Airport Orly</a></li>
+    <li><a href=""><i class="fas fa-caret-right"></i> Airport Beauvais</a></li>
+    <li><a href=""><i class="fas fa-caret-right"></i> Parc Asterix</a></li>
+    <li><a href=""><i class="fas fa-caret-right"></i> Charles de Gaulle</a></li>
+</ul>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="footer-widget-box list">
+    <h4 class="footer-widget-title">Contact Info</h4>
+    <ul class="footer-contact">
+        <li><a href="tel:+33752244444"><i class="far fa-phone"></i>+33 752 24 44 44</a></li>
+        <li><i class="far fa-map-marker-alt"></i>Paris, France</li>
+        <li><a href="mailto:pdairportcab@gmail.com"><i class="far fa-envelope"></i>Parisfasttransfer@gmail.com</a></li>
+    </ul>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 align-self-center">
+                        <p class="copyright-text">
+    &copy; Copyright <span id="date"></span> <a href="#"> Paris Fast Transfer </a> All Rights Reserved.
+</p>
+
+                    </div>
+                    <div class="col-md-6 align-self-center">
+                        <ul class="footer-social">
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer area end -->
+
+
+
+
+    <!-- scroll-top -->
+    <a href="#" id="scroll-top"><i class="far fa-arrow-up"></i></a>
+    <!-- scroll-top end -->
+
+
+    <!-- js -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/modernizr.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="assets/js/jquery.appear.min.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/counter-up.js"></script>
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="assets/js/jquery.timepicker.min.js"></script>
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/contact-form.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover Paris with private drive tours and sightseeing facilities. Trusted tour operator offering personalized Paris city experiences 24/7.">
+    <meta name="keywords" content="sightseeing facilities in paris, drive tour in paris, private tour operator paris">
+    <meta property="og:title" content="Sightseeing in Paris | Private Tour Operator & Drive Tours">
+    <meta property="og:description" content="Explore Paris in comfort with private drive tours and sightseeing services. Professional tour operators offering personalized city experiences.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:8000/Paris-Sightseeing-and-Tours">
+    <link rel="canonical" href="http://localhost:8000/Paris-Sightseeing-and-Tours">
+    <meta property="og:image" content="http://localhost:8000/assets/img/service/city.jpg">
+
+    <!-- title -->
+    <title>Sightseeing in Paris | Private Tour Operator & Drive Tours</title>
+
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/img/logo/New_Project__2_-removebg-preview.png" >
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/all-fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="assets/css/jquery.timepicker.min.css">
+    <link rel="stylesheet" href="assets/css/nice-select.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+ <style>
+    .hero-section {
+    min-height: 100vh; /* full screen height */
+    position: relative;
+    overflow: hidden;
+}
+.hero-single {
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+.hero-section {
+    opacity: 0;
+    transition: opacity 0.6s ease-in;
+}
+body.loaded .hero-section {
+    opacity: 1;
+}
+ </style>
+
+    
+
+</head>
+
+<body>
+
+    
+
+    <!-- header area -->
+    <header class="header">
+        <!-- top header -->
+        <!-- ========== Top Bar Start ========== -->
+         <div class="header-top">
+            <div class="container">
+                <div class="header-top-wrapper">
+                    <!-- Left Side (Contact Info) -->
+                    <div class="header-top-left">
+                        <div class="header-top-contact">
+                            <ul>
+                                <li><a href="mailto:info@example.com"><i class="far fa-envelopes"></i>
+                                       Parisfasttransfer@gmail.com</a></li>
+                                <li><a href="tel:+21236547898"><i class="far fa-phone-volume"></i> +33 752 24 44 44</a>
+                                </li>
+                                <li><a href="#"><i class="far fa-alarm-clock"></i> Sun - Fri (08AM - 10PM)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Language Switcher -->
+            <div id="google_translate_element" style="display:none;"></div>
+
+<!-- 🌍 FLAG SWITCHER -->
+<div class="premium-lang-box">
+    <img src="https://flagcdn.com/48x36/gb.png" id="flag-en" class="flag-btn" onclick="translateLanguage('en')" alt="flag">
+    <img src="https://flagcdn.com/48x36/fr.png" id="flag-fr" class="flag-btn" onclick="translateLanguage('fr')" alt="flag">
+    <img src="https://flagcdn.com/48x36/it.png" id="flag-it" class="flag-btn" onclick="translateLanguage('it')" alt="flag">
+    <img src="https://flagcdn.com/48x36/es.png" id="flag-es" class="flag-btn" onclick="translateLanguage('es')" alt="flag">
+    
+</div>
+
+<style>
+/* 🌍 FLAG BUTTONS */
+.premium-lang-box {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    
+}
+
+.flag-btn {
+    width: 32px;
+    height: 22px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    border: 2px solid transparent;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    
+}
+
+.flag-btn:hover {
+    transform: translateY(-3px);
+}
+
+.flag-active {
+    border-color: #007bff;
+    transform: translateY(-3px);
+    box-shadow: 0 0 10px rgba(0,123,255,0.7);
+}
+
+/* 🔥 HIDE GOOGLE TRANSLATE POPUP */
+.goog-te-spinner-pos,
+.goog-te-balloon-frame,
+.goog-tooltip,
+.goog-tooltip:hover,
+.goog-text-highlight,
+.goog-te-menu-frame,
+.goog-te-banner-frame,
+.skiptranslate iframe {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    height: 0 !important;
+}
+
+body { top: 0px !important; }
+.goog-text-highlight { background: none !important; }
+</style>
+
+<script>
+/* INIT Google Translate */
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,fr,it,es'
+    }, 'google_translate_element');
+}
+
+/* FLAG CLICK → CHANGE LANGUAGE */
+function translateLanguage(lang) {
+    let combo = document.querySelector(".goog-te-combo");
+    if (combo) {
+        combo.value = lang;
+        combo.dispatchEvent(new Event("change"));
+    }
+
+    // Active flag UI
+    document.querySelectorAll(".flag-btn").forEach(f => f.classList.remove("flag-active"));
+    document.getElementById("flag-" + lang).classList.add("flag-active");
+}
+
+/* FORCE REMOVE POPUP */
+setInterval(() => {
+    document.querySelectorAll(".goog-te-banner-frame, .goog-te-balloon-frame, .goog-tooltip")
+        .forEach(el => el.remove());
+
+    document.body.style.top = "0px";
+}, 100);
+</script>
+
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+
+
+                        
+                        <!-- Social Links -->
+                        <div class="header-top-social">
+                            <span>Follow Us: </span>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ========== Top Bar End ========== -->
+
+        <div class="main-navigation">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container position-relative">
+                    <a class="navbar-brand" href="/">
+                        <img src="assets/img/logo/logo-light.png" alt="Parisfasttransfer">
+                    </a>
+                    <div class="mobile-menu-right">
+                        <!-- <div class="search-btn">
+                            <button type="button" class="nav-right-link"><i class="far fa-search"></i></button>
+                        </div> -->
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#main_nav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-mobile-icon"><i class="far fa-bars"></i></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="main_nav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link " href="/">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about.html">About Us</a>
+                            </li>
+                            <li class="nav-item">
+    <a class="nav-link" href="service.html">Our Services</a>
+</li>
+
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="taxi-rate.html">Our Rates</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="partner.html">Partner</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " href="blog.html">Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact.html">Contact Us</a>
+                            </li>
+                        </ul>
+
+                        <!-- Keep only Book A Taxi button -->
+                        <div class="nav-right">
+                            <div class="nav-right-btn mt-2">
+                                <a href="contact.html" class="theme-btn"><span class="fas fa-taxi"></span>Contact Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- search area -->
+                    <!-- <div class="search-area">
+                        <form action="#">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Type Keyword...">
+                                <button type="submit" class="search-icon-btn"><i class="far fa-search"></i></button>
+                            </div>
+                        </form>
+                    </div> -->
+                    <!-- search area end -->
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- header area end -->
+
+
+<section class="blog-section" data-aos="fade-up">
+  <div class="container">
+    <div class="blog-title">
+      <h2>Paris Sightseeing & Tours</h2>
+      <div class="underline"></div>
+    </div>
+
+    <div class="blog-content">
+      <div class="blog-img" data-aos="fade-right">
+        <img src="assets/img/service/paris-luxury-private-cab.jpeg" alt="Paris Sightseeing & Tours">
+      </div>
+
+      <div class="blog-text" data-aos="fade-left">
+       <h2>Sightseeing in Paris with PD Airport Cab</h2>
+
+<p class="mb-20">
+    Paris, famously known as the <strong>City of Light</strong>, is rich in history, culture, and timeless beauty.
+    From iconic landmarks to charming hidden corners, the city offers unforgettable experiences for every traveler.
+    Whether this is your first visit or a return trip, discovering Paris is always special. To enjoy the city
+    stress-free, reliable transportation is essential — and that’s where <strong>Paris Fast Transfer</strong> becomes
+    your perfect travel companion.
+</p>
+
+<h3>Why Choose a Private Car Service for Sightseeing in Paris?</h3>
+
+<p class="mb-20">
+    Exploring multiple attractions in a single day can be challenging without the right transport.
+    Booking a <strong>private cab in Paris</strong> helps you save time while enjoying comfort and flexibility.
+    Here are some key advantages:
+</p>
+
+<ul class="mb-20">
+    <li><strong>Convenience:</strong> Door-to-door pickup and drop-off to reduce travel effort</li>
+    <li><strong>Flexibility:</strong> Customized sightseeing plans based on your interests</li>
+    <li><strong>Comfort:</strong> Clean, spacious, and well-maintained vehicles</li>
+    <li><strong>Efficiency:</strong> Avoid crowded public transport and long waiting times</li>
+</ul>
+
+<h3>The Most Popular Landmarks to Visit in Paris</h3>
+
+<p class="mb-20">
+    <strong>Eiffel Tower:</strong> No Paris visit is complete without seeing the iconic Eiffel Tower.
+    Enjoy stunning views from the Champ de Mars or head to the top for breathtaking panoramic sights.
+</p>
+
+<p class="mb-20">
+    <strong>Louvre Museum:</strong> Home to world-famous artworks like the Mona Lisa and Venus de Milo,
+    the Louvre is a must-visit for art and history lovers. A private cab ensures early and comfortable access.
+</p>
+
+<p class="mb-20">
+    <strong>Notre-Dame Cathedral:</strong> Admire the beautiful Gothic architecture and intricate details
+    of this historic Parisian landmark.
+</p>
+
+<p class="mb-20">
+    <strong>Montmartre & Sacré-Cœur Basilica:</strong> Explore the artistic streets of Montmartre and enjoy
+    stunning city views from the Sacré-Cœur Basilica.
+</p>
+
+<p class="mb-20">
+    <strong>Champs-Élysées & Arc de Triomphe:</strong> Walk along the elegant Champs-Élysées, lined with shops
+    and cafés, and visit the Arc de Triomphe for a spectacular city view.
+</p>
+
+<p class="mb-20">
+    <strong>Palace of Versailles:</strong> Located near Paris, the Palace of Versailles showcases royal luxury
+    with its magnificent gardens and the famous Hall of Mirrors. A private cab makes this trip smooth and relaxing.
+</p>
+
+<h3>Hidden Gems to Explore</h3>
+
+<p class="mb-20">
+    <strong>Le Marais District:</strong> Known for historic streets, trendy boutiques, and lively cafés,
+    Le Marais is perfect for a relaxed afternoon.
+</p>
+
+<p class="mb-20">
+    <strong>Le Bon Marché:</strong> A premium shopping destination offering authentic French fashion,
+    gourmet food, and luxury products.
+</p>
+
+<p class="mb-20">
+    <strong>Canal Saint-Martin:</strong> Enjoy a peaceful walk along the canal, surrounded by local shops
+    and charming restaurants away from busy tourist areas.
+</p>
+
+<h3>Paris Fast Transfer – Enhancing Your Paris Sightseeing Experience</h3>
+
+<p class="mb-20">
+    Choosing <strong>Paris Fast Transfer</strong> for sightseeing in Paris ensures comfort, reliability, and flexibility:
+</p>
+
+<ul class="mb-20">
+    <li><strong>Custom Itineraries:</strong> Plan your tour based on your favorite attractions</li>
+    <li><strong>Professional Drivers:</strong> Experienced and polite drivers who know the best routes</li>
+    <li><strong>Comfortable Rides:</strong> Ideal for families, couples, and solo travelers</li>
+</ul>
+
+<h3>Conclusion</h3>
+
+<p class="mb-20">
+    Paris is a city of endless discovery. Whether you’re admiring the romance of the Eiffel Tower,
+    exploring world-famous museums, or uncovering hidden neighborhoods, <strong>Paris Fast Transfer</strong>
+    ensures your journey is just as magical as the destination.
+</p>
+
+<p class="mb-20">
+    <strong>Book your Paris sightseeing tour today</strong> and explore the city in comfort, style,
+    and complete peace of mind.
+</p>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ✅ Same CSS styling (you only need this once if you already added it earlier) -->
+<style>
+.blog-section {
+  padding: 80px 20px;
+  background: #f9f9f9;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+}
+
+.blog-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.blog-title h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+
+.blog-title .underline {
+  width: 80px;
+  height: 4px;
+  background: #0078d7;
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.blog-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.blog-img {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+}
+
+.blog-img img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease;
+}
+
+.blog-img img:hover {
+  transform: scale(1.03);
+}
+
+.blog-text {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.blog-text h3 {
+  color: #0078d7;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.blog-text p {
+  margin-bottom: 15px;
+  line-height: 1.7;
+  font-size: 16px;
+  color: #444;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .blog-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .blog-text {
+    max-width: 100%;
+  }
+
+  .blog-title h2 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 576px) {
+  .blog-text {
+    padding: 20px;
+  }
+
+  .blog-text h3 {
+    font-size: 20px;
+  }
+
+  .blog-text p {
+    font-size: 15px;
+  }
+}
+</style>
+
+
+
+
+    <footer class="footer-area">
+    <!-- WhatsApp Button -->
+  <div id="whatsapp-button" class="whatsapp-button">
+    <a href="https://wa.me/+33 752 24 44 44" target="_blank" rel="noopener noreferrer">
+      <img src="assets/img/slider/R.png" alt="WhatsApp Icon">
+    </a>
+  </div>
+        <div class="footer-widget">
+            <div class="container">
+                <div class="row footer-widget-wrapper pt-120 pb-70">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="footer-widget-box about-us">
+                            <a href="#" class="footer-logo">
+                                <img src="assets/img/taxi/New Project.png" alt="Parisfasttransfer" >
+                            </a>
+                            <p class="mb-3">
+    Travelling from Charles de Gaulle Airport or other Paris airports to Disneyland or around Paris has never been easier. 
+    Paris Fast Transfer provides safe, reliable, and comfortable transfers with professional drivers to make your journey smooth and stress-free.
+</p>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-2">
+                        <div class="footer-widget-box list">
+                            <h4 class="footer-widget-title">Quick Links</h4>
+                            <ul class="footer-list">
+    <li><a href="/"><i class="fas fa-caret-right"></i> Home</a></li>
+    <!-- <li><a href="#"><i class="fas fa-caret-right"></i> PARIS - AIRPORTS - DISNEYLAND</a></li>
+    <li><a href="#"><i class="fas fa-caret-right"></i> SIGHTSEEING PARIS</a></li> -->
+    <li><a href="about.html"><i class="fas fa-caret-right"></i> About Us</a></li>
+    <li><a href="taxi-rate.html"><i class="fas fa-caret-right"></i> Our Rates</a></li>
+    <li><a href="partner.html"><i class="fas fa-caret-right"></i>Paris Fast Transfer</a></li>
+    <li><a href="contact.html"><i class="fas fa-caret-right"></i> Contact Us</a></li>
+</ul>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="footer-widget-box list">
+                            <h4 class="footer-widget-title">Routes</h4>
+                            <ul class="footer-list">
+    <li><a href=""><i class="fas fa-caret-right"></i> Paris</a></li>
+    <li><a href=""><i class="fas fa-caret-right"></i> Disneyland</a></li>
+    <li><a href=""><i class="fas fa-caret-right"></i> Airport Charles de Gaulle</a></li>
+    <li><a href=""><i class="fas fa-caret-right"></i> Airport Orly</a></li>
+    <li><a href=""><i class="fas fa-caret-right"></i> Airport Beauvais</a></li>
+    <li><a href=""><i class="fas fa-caret-right"></i> Parc Asterix</a></li>
+    <li><a href=""><i class="fas fa-caret-right"></i> Charles de Gaulle</a></li>
+</ul>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="footer-widget-box list">
+    <h4 class="footer-widget-title">Contact Info</h4>
+    <ul class="footer-contact">
+        <li><a href="tel:+33752244444"><i class="far fa-phone"></i>+33 752 24 44 44</a></li>
+        <li><i class="far fa-map-marker-alt"></i>Paris, France</li>
+        <li><a href="mailto:pdairportcab@gmail.com"><i class="far fa-envelope"></i>Parisfasttransfer@gmail.com</a></li>
+    </ul>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 align-self-center">
+                        <p class="copyright-text">
+    &copy; Copyright <span id="date"></span> <a href="#"> Paris Fast Transfer </a> All Rights Reserved.
+</p>
+
+                    </div>
+                    <div class="col-md-6 align-self-center">
+                        <ul class="footer-social">
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer area end -->
+
+
+
+    <!-- scroll-top -->
+    <a href="#" id="scroll-top"><i class="far fa-arrow-up"></i></a>
+    <!-- scroll-top end -->
+
+
+    <!-- js -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/modernizr.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="assets/js/jquery.appear.min.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/counter-up.js"></script>
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="assets/js/jquery.timepicker.min.js"></script>
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

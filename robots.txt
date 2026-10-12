@@ -1,4 +1,4 @@
-# robots.txt for http://localhost:8000/
+# robots.txt for https://parisfasttransfer.com/
 
 User-agent: *
 Allow: /
@@ -13,7 +13,20 @@ Disallow: /old/
 Disallow: /private/
 
 # Sitemap location
-Sitemap: http://localhost:8000/sitemap.xml
+Sitemap: https://parisfasttransfer.com/sitemap.xml
 
-# Crawling delay (optional)
-Crawl-delay: 5
+
+
+# AI search and assistant crawlers: allowed so pages can be cited
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
