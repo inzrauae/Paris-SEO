@@ -11,6 +11,8 @@ Disallow: /includes/
 Disallow: /scripts/
 Disallow: /old/
 Disallow: /private/
+# duplicate page copies stored in /assets/
+Disallow: /assets/*.html$
 
 # Sitemap location
 Sitemap: https://parisfasttransfer.com/sitemap.xml

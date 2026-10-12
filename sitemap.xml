@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://parisfasttransfer.com/</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-12</lastmod>
   </url>
   <url>
     <loc>https://parisfasttransfer.com/about</loc>
@@ -79,5 +79,9 @@
   <url>
     <loc>https://parisfasttransfer.com/frozen</loc>
     <lastmod>2026-10-09</lastmod>
+  </url>
+  <url>
+    <loc>https://parisfasttransfer.com/France-Transfer</loc>
+    <lastmod>2026-10-12</lastmod>
   </url>
 </urlset>
