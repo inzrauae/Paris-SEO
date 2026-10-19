@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Book an Orly to Disneyland transfer with PFT Cabs: private taxi or van from Orly Airport to your Disneyland Paris hotel or park entrance. Meet &amp; greet, fixed pricing, child seats on request.">
+    <meta name="description" content="Book a private Orly to Disneyland Paris taxi or van with PFT Cabs. Meet and greet, fixed fares and child seats on request for your park or hotel transfer.">
     <meta name="keywords" content="orly to disneyland transfer, orly to disneyland paris transfer, private transfer orly to disneyland, transfer from orly airport to disneyland, shuttle orly disneyland, paris orly to euro disney transfer, taxi paris orly disneyland, private transfer paris disney">
     <meta property="og:title" content="Orly to Disneyland Transfer | Private Taxi &amp; Van | PFT Cabs">
     <meta property="og:description" content="Orly to Disneyland transfer: your driver meets you at Orly arrivals and takes you to your Disneyland Paris hotel or the park entrance. Book with PFT Cabs.">
@@ -41,7 +41,7 @@
     <link rel="stylesheet" href="assets/css/jquery.timepicker.min.css">
     <link rel="stylesheet" href="assets/css/nice-select.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/site-nav.css">
+    <link rel="stylesheet" href="assets/css/site-nav.css?v=20261019b">
 
     <style>
        /* ===== CDG to Disneyland Cab Service ===== */
@@ -265,14 +265,110 @@
    "mainEntityOfPage": {
     "@id": "https://parisfasttransfer.com/Private-transfer-Orly-Airport-to-Euro-Disney#webpage"
    },
-   "offers": {
-    "@type": "Offer",
-    "url": "https://parisfasttransfer.com/taxi-rate",
-    "priceSpecification": {
-     "@type": "PriceSpecification",
-     "description": "Fixed pricing. See the taxi rates page for current prices."
+   "offers": [
+    {
+     "@type": "AggregateOffer",
+     "name": "Orly to Disneyland",
+     "priceCurrency": "EUR",
+     "lowPrice": 85,
+     "highPrice": 180,
+     "offerCount": 7,
+     "url": "https://parisfasttransfer.com/taxi-rate",
+     "offers": [
+      {
+       "@type": "Offer",
+       "name": "Orly to Disneyland, 3 passengers",
+       "price": 85,
+       "priceCurrency": "EUR",
+       "eligibleQuantity": {
+        "@type": "QuantitativeValue",
+        "value": 3,
+        "unitText": "passengers"
+       },
+       "availability": "https://schema.org/InStock",
+       "url": "https://parisfasttransfer.com/taxi-rate"
+      },
+      {
+       "@type": "Offer",
+       "name": "Orly to Disneyland, 4 passengers",
+       "price": 90,
+       "priceCurrency": "EUR",
+       "eligibleQuantity": {
+        "@type": "QuantitativeValue",
+        "value": 4,
+        "unitText": "passengers"
+       },
+       "availability": "https://schema.org/InStock",
+       "url": "https://parisfasttransfer.com/taxi-rate"
+      },
+      {
+       "@type": "Offer",
+       "name": "Orly to Disneyland, 5 passengers",
+       "price": 90,
+       "priceCurrency": "EUR",
+       "eligibleQuantity": {
+        "@type": "QuantitativeValue",
+        "value": 5,
+        "unitText": "passengers"
+       },
+       "availability": "https://schema.org/InStock",
+       "url": "https://parisfasttransfer.com/taxi-rate"
+      },
+      {
+       "@type": "Offer",
+       "name": "Orly to Disneyland, 6 passengers",
+       "price": 100,
+       "priceCurrency": "EUR",
+       "eligibleQuantity": {
+        "@type": "QuantitativeValue",
+        "value": 6,
+        "unitText": "passengers"
+       },
+       "availability": "https://schema.org/InStock",
+       "url": "https://parisfasttransfer.com/taxi-rate"
+      },
+      {
+       "@type": "Offer",
+       "name": "Orly to Disneyland, 7 passengers",
+       "price": 105,
+       "priceCurrency": "EUR",
+       "eligibleQuantity": {
+        "@type": "QuantitativeValue",
+        "value": 7,
+        "unitText": "passengers"
+       },
+       "availability": "https://schema.org/InStock",
+       "url": "https://parisfasttransfer.com/taxi-rate"
+      },
+      {
+       "@type": "Offer",
+       "name": "Orly to Disneyland, 8 passengers",
+       "price": 110,
+       "priceCurrency": "EUR",
+       "eligibleQuantity": {
+        "@type": "QuantitativeValue",
+        "value": 8,
+        "unitText": "passengers"
+       },
+       "availability": "https://schema.org/InStock",
+       "url": "https://parisfasttransfer.com/taxi-rate"
+      },
+      {
+       "@type": "Offer",
+       "name": "Orly to Disneyland, 9 passengers",
+       "price": 180,
+       "priceCurrency": "EUR",
+       "eligibleQuantity": {
+        "@type": "QuantitativeValue",
+        "value": 9,
+        "unitText": "passengers"
+       },
+       "availability": "https://schema.org/InStock",
+       "url": "https://parisfasttransfer.com/taxi-rate"
+      }
+     ]
     }
-   },
+   ],
    "availableChannel": [
     {
      "@type": "ServiceChannel",
@@ -652,7 +748,7 @@ setInterval(() => {
                                     <li><a href="/Private-transfer-(CDG)-Charles-de-Gaulle-Airport-to-paris">CDG to Paris transfer</a></li>
                                     <li><a href="/Cdg-airport-private-taxi-service">CDG airport private taxi</a></li>
                                     <li><a href="/Transfer-from-Orly-airport-to-Paris-city">Taxi Paris Orly</a></li>
-                                    <li><a href="/Compare-Paris-Airports">Beauvais taxi</a></li>
+                                    <li><a href="/Beauvais-Taxi-Transfer">Beauvais taxi</a></li>
                                     <li><a href="/Paris-Airport-to-city-center-cab-service">Paris airport to city center</a></li>
                                     <li class="hx-sub-label">Disneyland Paris</li>
                                     <li><a href="/From-Charles-de-Gaulle-Airport-to-Disneyland-Paris">CDG to Disneyland Paris</a></li>
@@ -899,6 +995,28 @@ setInterval(() => {
     </div>
   </section>
 
+  <!-- Fixed prices -->
+  <section class="cp-section" id="taxi-prices">
+    <div class="cp-wrap">
+      <div class="cp-head">
+        <span class="cp-tag">Fixed Prices</span>
+        <h2>Orly to Disneyland Paris Taxi Price</h2>
+        <p>Fixed prices for this route, so you know the fare before you travel.</p>
+      </div>
+      <div class="cp-table-wrap">
+        <table class="cp-table">
+          <thead>
+            <tr><th scope="col">Route</th><th scope="col">3 PAX</th><th scope="col">4 PAX</th><th scope="col">5 PAX</th><th scope="col">6 PAX</th><th scope="col">7 PAX</th><th scope="col">8 PAX</th><th scope="col">9 PAX</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Orly to Disneyland</th><td>&euro;85</td><td>&euro;90</td><td>&euro;90</td><td>&euro;100</td><td>&euro;105</td><td>&euro;110</td><td>&euro;180</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="cp-note" style="text-align:center;margin-top:18px">Prices are in euros, by number of passengers, and were last reviewed on 19 October 2026. The <a href="/taxi-rate">taxi rates page</a> always shows the current price. Travelling with a larger group or need another route? <a href="/contact">Ask for a quote</a>.</p>
+    </div>
+  </section>
+
   <!-- FAQ Section -->
   <section class="cp-section cp-alt" id="orly-disney-faq">
     <div class="cp-wrap cp-faq">
@@ -996,6 +1114,35 @@ setInterval(() => {
     <!-- <li><a href="#"><i class="fas fa-caret-right"></i> PARIS - AIRPORTS - DISNEYLAND</a></li>
     <li><a href="#"><i class="fas fa-caret-right"></i> SIGHTSEEING PARIS</a></li> -->
     <li><a href="/about"><i class="fas fa-caret-right"></i> About Us</a></li>
+    <li class="ft-dd">
+        <details>
+            <summary><i class="fas fa-caret-right"></i> Our Services</summary>
+            <div class="ft-dd-body">
+                <span class="ft-dd-label">Airport transfers</span>
+                <ul>
+                    <li><a href="/Private-transfer-(CDG)-Charles-de-Gaulle-Airport-to-paris">CDG to Paris transfer</a></li>
+                    <li><a href="/Cdg-airport-private-taxi-service">CDG airport private taxi</a></li>
+                    <li><a href="/Transfer-from-Orly-airport-to-Paris-city">Taxi Paris Orly</a></li>
+                    <li><a href="/Beauvais-Taxi-Transfer">Beauvais taxi</a></li>
+                    <li><a href="/Paris-Airport-to-city-center-cab-service">Paris airport to city center</a></li>
+                </ul>
+                <span class="ft-dd-label">Disneyland Paris</span>
+                <ul>
+                    <li><a href="/From-Charles-de-Gaulle-Airport-to-Disneyland-Paris">CDG to Disneyland Paris</a></li>
+                    <li><a href="/Private-transfer-Orly-Airport-to-Euro-Disney">Orly to Disneyland Paris</a></li>
+                    <li><a href="/Paris-Disney-airport-cab-service">Disneyland airport cab service</a></li>
+                    <li><a href="/Disneyland-Paris-airport-transfer">Shuttle bus Disneyland Paris</a></li>
+                </ul>
+                <span class="ft-dd-label">More</span>
+                <ul>
+                    <li><a href="/Paris-airport-private-cab-service">Private car service Paris</a></li>
+                    <li><a href="/Paris-Sightseeing-and-Tours">Paris sightseeing tours</a></li>
+                    <li><a href="/France-Transfer">France transfer</a></li>
+                </ul>
+                <a class="ft-dd-all" href="/service">All services <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </details>
+    </li>
     <li><a href="/taxi-rate"><i class="fas fa-caret-right"></i> Our Rates</a></li>
     <li><a href="/partner"><i class="fas fa-caret-right"></i>Paris Fast Transfer</a></li>
     <li><a href="/contact"><i class="fas fa-caret-right"></i> Contact Us</a></li>
@@ -1016,7 +1163,7 @@ setInterval(() => {
                                 <li><a href="/Disneyland-Paris-airport-transfer"><i class="fas fa-caret-right"></i> Disneyland Paris Shuttle</a></li>
                                 <li><a href="/Paris-Disney-airport-cab-service"><i class="fas fa-caret-right"></i> Disneyland Airport Cab</a></li>
                                 <li><a href="/Paris-airport-private-cab-service"><i class="fas fa-caret-right"></i> Private Taxi Paris</a></li>
-                                <li><a href="/Compare-Paris-Airports"><i class="fas fa-caret-right"></i> Orly &amp; Beauvais Taxi</a></li>
+                                <li><a href="/Beauvais-Taxi-Transfer"><i class="fas fa-caret-right"></i> Orly &amp; Beauvais Taxi</a></li>
                                 <li><a href="/Paris-Sightseeing-and-Tours"><i class="fas fa-caret-right"></i> Paris Sightseeing Tours</a></li>
                                 <li><a href="/France-Transfer"><i class="fas fa-caret-right"></i> France Transfer</a></li>
                             </ul>
@@ -1042,7 +1189,7 @@ setInterval(() => {
                 <div class="row">
                     <div class="col-md-6 align-self-center">
                         <p class="copyright-text">
-    &copy; Copyright <span id="date"></span> <a href="#"> Paris Fast Transfer </a> All Rights Reserved.
+    &copy; Copyright <span id="date"></span> <a href="#"> Paris Fast Transfer </a> All Rights Reserved. <a href="https://seoservice.lk">SEO by SEO Service.lk</a>.
 </p>
 
                     </div>

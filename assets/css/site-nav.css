@@ -12,3 +12,20 @@
 .hx-crumbs-in{max-width:1140px;margin:0 auto;padding:12px 20px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;color:#5b6475}
 .hx-crumbs a{color:#0b1f4d;font-weight:600;text-decoration:none}
 .hx-crumbs a:hover{color:#b27c00}
+
+/* Footer "Our Services" dropdown */
+.ft-dd summary{cursor:pointer;list-style:none;display:flex;align-items:center;color:#fff;transition:.3s}
+.ft-dd summary::-webkit-details-marker{display:none}
+.ft-dd summary i{margin-right:9px;color:var(--theme-color,#ffb400);transition:transform .25s}
+.ft-dd summary::after{content:"";width:6px;height:6px;margin:-3px 0 0 10px;border-right:2px solid var(--theme-color,#ffb400);border-bottom:2px solid var(--theme-color,#ffb400);transform:rotate(45deg);transition:transform .25s}
+.ft-dd details[open]>summary,.ft-dd summary:hover{color:var(--theme-color,#ffb400)}
+.ft-dd details[open]>summary i{transform:rotate(90deg)}
+.ft-dd details[open]>summary::after{transform:rotate(225deg);margin-top:3px}
+.ft-dd summary:focus-visible{outline:2px solid var(--theme-color,#ffb400);outline-offset:3px}
+.ft-dd-body{margin:10px 0 4px 6px;padding-left:12px;border-left:2px solid rgba(255,180,0,.55)}
+.ft-dd-label{display:block;margin:12px 0 6px;font-size:.66rem;letter-spacing:.6px;white-space:nowrap;text-transform:uppercase;color:#ffb400;font-weight:800}
+.ft-dd-label:first-child{margin-top:2px}
+.ft-dd-body ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.45rem}
+.ft-dd-body ul a{font-size:.92rem;line-height:1.4}
+.footer-list .ft-dd-all{display:inline-block;margin-top:12px;font-weight:700;color:#ffb400}
+.footer-list .ft-dd-all i{margin:0 0 0 4px;color:inherit}

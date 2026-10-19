@@ -7,6 +7,12 @@ RewriteCond %{HTTPS} !=on
 RewriteRule ^(.*)$ https://parisfasttransfer.com/$1 [R=301,L]
 
 ################################
+# 0.1) Force one hostname: www -> non-www (HTTPS)
+################################
+RewriteCond %{HTTP_HOST} ^www\.parisfasttransfer\.com$ [NC]
+RewriteRule ^(.*)$ https://parisfasttransfer.com/$1 [R=301,L]
+
+################################
 # 0.5) Special-case: /index, /index.html, /index.php -> redirect to root
 #      Avoids duplicate homepage URL (root vs /index)
 ################################
@@ -15,8 +21,10 @@ RewriteRule ^ /? [R=301,L]
 
 ################################
 # 1) If URL is typed/linked WITH .html or .php, 301 redirect to the
-#    clean (extension-less) URL. e.g. /about.html -> /about
+#    clean (extension-less) URL for browser navigation requests.
+#    Preserve POST requests to PHP backend endpoints.
 ################################
+RewriteCond %{REQUEST_METHOD} ^(?:GET|HEAD)$
 RewriteCond %{THE_REQUEST} \s/+(.*)\.(?:html|php)[\s?] [NC]
 RewriteRule ^ /%1 [R=301,L]
 
