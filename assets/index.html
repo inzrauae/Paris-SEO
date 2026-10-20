@@ -2699,7 +2699,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // ✅ Shared rates data — same assets/data/rates.json used by taxi-rate.html
         // and book-ride.php, so this homepage price preview always matches.
         let RATES_DATA = null;
-        const RATES_READY = fetch('https://dashboard.parisfasttransfer.com/assets/php/get-rates.php')
+        const RATES_READY = fetch('https://backoffice.parisfasttransfer.com/assets/php/get-rates.php')
             .then(res => res.json())
             .then(data => { RATES_DATA = data; getPrice(); return data; })
             .catch(err => {

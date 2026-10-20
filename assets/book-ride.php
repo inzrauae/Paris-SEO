@@ -570,7 +570,7 @@ setInterval(() => {
                             </div>
 
 
-                            <form action="https://dashboard.parisfasttransfer.com/assets/php/mail.php" method="POST">
+                            <form action="https://backoffice.parisfasttransfer.com/assets/php/mail.php" method="POST">
 
                                 <div class="row">
                                     
@@ -1053,7 +1053,7 @@ setInterval(() => {
         // ✅ Shared rates data (fetched once from assets/data/rates.json — the SAME file
         // used by taxi-rate.html — so both pages always show/charge identical prices)
         let RATES_DATA = null;
-        const RATES_READY = fetch('https://dashboard.parisfasttransfer.com/assets/php/get-rates.php')
+        const RATES_READY = fetch('https://backoffice.parisfasttransfer.com/assets/php/get-rates.php')
             .then(res => res.json())
             .then(data => { RATES_DATA = data; return data; })
             .catch(err => {

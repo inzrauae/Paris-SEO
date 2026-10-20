@@ -765,7 +765,7 @@ toggleBtn.addEventListener('click', () => {
 });
 
 // ✅ Fetch shared rates.json (single source of truth used by rates page + booking page)
-fetch('https://dashboard.parisfasttransfer.com/assets/php/get-rates.php')
+fetch('https://backoffice.parisfasttransfer.com/assets/php/get-rates.php')
   .then(res => res.json())
   .then(data => {
     const paxColumns = data.paxColumns;
